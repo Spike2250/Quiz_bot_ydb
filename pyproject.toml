@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "quiz-bot-ydb"
+version = "0.1.0"
+description = ""
+authors = ["Shilov Ilia <shilov.spike2250@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiogram = "^3.9.0"
+prettytable = "^3.10.0"
+ydb = "^3.12.3"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
