@@ -2,6 +2,7 @@ from aiogram import types, F, Router
 from aiogram.filters import Command
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
+from quiz_bot.bucket import get_image
 from quiz_bot.service import new_quiz, handle_answer
 from quiz_bot.db_service import get_records_table
 
@@ -21,6 +22,8 @@ async def cmd_start(message: types.Message):
 @router.message(Command("quiz"))
 async def cmd_quiz(message: types.Message):
     await message.answer(f"Давайте начнем квиз!")
+    img = types.BufferedInputFile(get_image('quiz_img.png'), filename='quiz_img.png')
+    await message.answer_photo(img)
     await new_quiz(message)
 
 

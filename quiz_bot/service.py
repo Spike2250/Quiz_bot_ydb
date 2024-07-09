@@ -1,6 +1,7 @@
 from aiogram import types
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from quiz_bot.bucket import get_image
 from quiz_bot.db_service import (
     update_quiz_index,
     get_quiz_index,
@@ -73,13 +74,18 @@ async def handle_answer(callback: types.CallbackQuery,
     user_answer = current_question_list[current_question_index]['options'][user_answer_index]
 
     if right_answer:
+        # img = types.BufferedInputFile(get_image('correct.png'),
+        #                               filename='correct.png')
         message = f"Ваш ответ: {user_answer}.\nВерно! Вы получаете +10 очков!"
         current_score += 10
         await update_current_score(callback.from_user.id, current_score)
     else:
+        # img = types.BufferedInputFile(get_image('incorrect.png'),
+        #                               filename='incorrect.png')
         correct_option = current_question_list[current_question_index]['correct_option']
         message = f'Ваш ответ: "{user_answer}". Неправильно :(\nПравильный ответ: ' \
                   f'"{current_question_list[current_question_index]["options"][correct_option]}"'
+    # await callback.message.answer_photo(img)
     await callback.message.answer(message)
 
     current_question_index += 1

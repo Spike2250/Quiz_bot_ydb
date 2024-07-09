@@ -1,9 +1,4 @@
 # Quiz_bot
-## Installation
-```ch
-poetry install
-```
-## Usage
-```ch
-poetry run start
-```
+#### telegram: @quiz_spike_bot
+## Implemented on:
+#### YandexCloud (API Gateway, Cloud Function, YDB, Object Storage)

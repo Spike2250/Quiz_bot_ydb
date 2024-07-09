@@ -2,3 +2,4 @@ aiogram
 prettytable
 ydb
 python-dotenv
+boto3
