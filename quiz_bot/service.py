@@ -1,7 +1,7 @@
 from aiogram import types
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from quiz_bot.bucket import get_image
+# from quiz_bot.bucket import get_image
 from quiz_bot.db_service import (
     update_quiz_index,
     get_quiz_index,
@@ -15,6 +15,7 @@ from quiz_bot.db_service import (
     get_question_list,
     create_question_list_from_indexes,
 )
+
 
 async def new_quiz(message):
     user_id = message.from_user.id
